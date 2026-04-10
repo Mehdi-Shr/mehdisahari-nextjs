@@ -80,21 +80,29 @@ export async function generateMetadata({
 }
 
 function extractFAQ(html: string): Array<{ question: string; answer: string }> {
-  // Extraction côté serveur via regex (pas de DOMParser en Node.js)
   const faqs: Array<{ question: string; answer: string }> = [];
-  // Trouve la section FAQ
   const faqMatch = html.match(/<h[23][^>]*>[^<]*(faq|question|foire)[^<]*<\/h[23]>/i);
   if (!faqMatch) return faqs;
   const afterFaq = html.slice(html.indexOf(faqMatch[0]) + faqMatch[0].length);
-  // Extrait les paires h3 + p suivantes
-  const pairRegex = /<h3[^>]*>(.*?)<\/h3>\s*<p[^>]*>(.*?)<\/p>/gis;
-  let match;
-  while ((match = pairRegex.exec(afterFaq)) !== null) {
-    // Stop si on atteint un h2
-    if (afterFaq.slice(0, match.index).includes("<h2")) break;
-    const question = match[1].replace(/<[^>]+>/g, "").trim();
-    const answer = match[2].replace(/<[^>]+>/g, "").trim();
-    if (question && answer) faqs.push({ question, answer });
+
+  // Format 1 : ### Question + <p>Réponse</p>  (n8n workflow)
+  const h3Regex = /<h3[^>]*>(.*?)<\/h3>\s*<p[^>]*>(.*?)<\/p>/gis;
+  let m;
+  while ((m = h3Regex.exec(afterFaq)) !== null) {
+    if (afterFaq.slice(0, m.index).includes("<h2")) break;
+    const q = m[1].replace(/<[^>]+>/g, "").trim();
+    const a = m[2].replace(/<[^>]+>/g, "").trim();
+    if (q && a) faqs.push({ question: q, answer: a });
+  }
+  if (faqs.length > 0) return faqs;
+
+  // Format 2 : <p><strong>Question ?</strong></p> + <p>Réponse</p>  (api/generate)
+  const boldRegex = /<p[^>]*><strong[^>]*>(.*?)<\/strong><\/p>\s*<p[^>]*>(.*?)<\/p>/gis;
+  while ((m = boldRegex.exec(afterFaq)) !== null) {
+    if (afterFaq.slice(0, m.index).includes("<h2")) break;
+    const q = m[1].replace(/<[^>]+>/g, "").trim();
+    const a = m[2].replace(/<[^>]+>/g, "").trim();
+    if (q && a) faqs.push({ question: q, answer: a });
   }
   return faqs;
 }
