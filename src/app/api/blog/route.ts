@@ -8,8 +8,8 @@ export async function GET(request: Request) {
   const offset = (page - 1) * limit;
 
   const supabase = createClient(
-    process.env.SUPABASE_URL!,
-    process.env.SUPABASE_PUBLISHABLE_KEY!,
+    process.env.VITE_SUPABASE_URL!,
+    process.env.VITE_SUPABASE_PUBLISHABLE_KEY!,
   );
 
   const { data: posts, error, count } = await supabase

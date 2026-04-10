@@ -7,8 +7,8 @@ export async function GET(
 ) {
   const { slug } = await params;
   const supabase = createClient(
-    process.env.SUPABASE_URL!,
-    process.env.SUPABASE_PUBLISHABLE_KEY!,
+    process.env.VITE_SUPABASE_URL!,
+    process.env.VITE_SUPABASE_PUBLISHABLE_KEY!,
   );
   const { data: post, error } = await supabase
     .from("posts")

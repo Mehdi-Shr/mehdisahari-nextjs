@@ -28,8 +28,8 @@ interface Post {
 }
 
 async function getPosts(): Promise<Post[]> {
-  const url = process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_PUBLISHABLE_KEY;
+  const url = process.env.VITE_SUPABASE_URL;
+  const key = process.env.VITE_SUPABASE_PUBLISHABLE_KEY;
   if (!url || !key) return [];
   const supabase = createClient(url, key);
   const { data } = await supabase

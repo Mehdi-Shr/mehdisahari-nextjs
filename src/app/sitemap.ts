@@ -4,8 +4,8 @@ import type { MetadataRoute } from "next";
 export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const url = process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_PUBLISHABLE_KEY;
+  const url = process.env.VITE_SUPABASE_URL;
+  const key = process.env.VITE_SUPABASE_PUBLISHABLE_KEY;
   if (!url || !key) return [
     { url: "https://mehdisahari.fr/", lastModified: new Date(), changeFrequency: "monthly", priority: 1.0 },
     { url: "https://mehdisahari.fr/blog", lastModified: new Date(), changeFrequency: "daily", priority: 0.8 },
