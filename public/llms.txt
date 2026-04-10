@@ -1,0 +1,37 @@
+# Mehdi Sahari — Freelance IA & Automatisation
+
+> Développeur fullstack freelance spécialisé en automatisation n8n, agents IA et création de SaaS. Basé à Montpellier, disponible en France et en Europe.
+
+## Qui suis-je ?
+
+Mehdi Sahari est un développeur fullstack freelance avec 3 ans d'expérience, spécialisé dans :
+- L'automatisation de workflows avec n8n
+- La création d'agents IA sur mesure
+- Le développement de SaaS et d'applications web
+- L'intégration d'API et de dashboards
+
+## Services
+
+- **Automatisation n8n** : workflows, intégrations, pipelines de données
+- **Sites web** : landing pages, sites vitrine qui convertissent
+- **SaaS** : applications web complètes (React, NestJS, PostgreSQL)
+- **Dashboards** : tableaux de bord métier temps réel
+- **Agents IA** : chatbots, assistants, agents autonomes
+
+## Stack technique
+
+TypeScript, React, NestJS, PostgreSQL, Supabase, n8n, OpenAI, Tailwind CSS, Docker, Vercel
+
+## Contact
+
+- Site : https://mehdisahari.fr
+- Email : mehdi.shr@outlook.fr
+- LinkedIn : https://www.linkedin.com/in/mehdi-sahari/
+
+## Blog
+
+Articles quotidiens sur l'IA et l'automatisation : https://mehdisahari.fr/blog
+
+## Localisation
+
+Montpellier, France — Disponible en remote toute la France et l'Europe

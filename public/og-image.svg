@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="55%" style="stop-color:#1e3a5f"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="75%" cy="30%" r="50%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:0.35"/>
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:0"/>
+    </radialGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Fond -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Cercles déco -->
+  <circle cx="1100" cy="580" r="320" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  <circle cx="1100" cy="580" r="220" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+  <circle cx="100"  cy="80"  r="180" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+
+  <!-- Pill tag -->
+  <rect x="80" y="100" width="310" height="36" rx="18"
+        fill="rgba(255,255,255,0.09)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+  <circle cx="103" cy="118" r="5" fill="#60a5fa"/>
+  <text x="118" y="123" fill="#93c5fd"
+        font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="700" font-size="13" letter-spacing="0.08em">FREELANCE · MONTPELLIER</text>
+
+  <!-- NOM -->
+  <text x="80" y="230"
+        fill="white"
+        font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="800" font-size="86" letter-spacing="-3">Mehdi Sahari</text>
+
+  <!-- Sous-titre -->
+  <text x="82" y="290" fill="rgba(147,197,253,0.85)"
+        font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="600" font-size="32" letter-spacing="-0.5">Développeur Fullstack Freelance</text>
+
+  <!-- Séparateur -->
+  <line x1="80" y1="330" x2="1120" y2="330"
+        stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+
+  <!-- Services -->
+  <rect x="80" y="356" width="12" height="12" rx="3" fill="#3b82f6"/>
+  <text x="104" y="368" fill="white"
+        font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="600" font-size="22">Agents IA &amp; Automatisation n8n</text>
+
+  <rect x="80" y="395" width="12" height="12" rx="3" fill="#3b82f6"/>
+  <text x="104" y="407" fill="white"
+        font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="600" font-size="22">Création de SaaS &amp; Applications web</text>
+
+  <rect x="80" y="434" width="12" height="12" rx="3" fill="#3b82f6"/>
+  <text x="104" y="446" fill="white"
+        font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="600" font-size="22">Sites Web · SEO · Dashboards</text>
+
+  <!-- Badge URL -->
+  <rect x="80" y="492" width="240" height="44" rx="10"
+        fill="rgba(255,255,255,0.11)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+  <text x="200" y="520" text-anchor="middle" fill="white"
+        font-family="-apple-system, BlinkMacSystemFont, sans-serif"
+        font-weight="700" font-size="18" letter-spacing="0.04em">mehdisahari.fr</text>
+</svg>
