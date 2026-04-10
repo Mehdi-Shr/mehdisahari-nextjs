@@ -16,7 +16,11 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
   alternates: {
     canonical: "https://mehdisahari.fr",
-    languages: { fr: "https://mehdisahari.fr/", en: "https://mehdisahari.fr/" },
+    languages: {
+      fr: "https://mehdisahari.fr/",
+      en: "https://mehdisahari.fr/",
+      "x-default": "https://mehdisahari.fr/",
+    },
   },
   openGraph: {
     type: "website",
@@ -41,7 +45,7 @@ export const metadata: Metadata = {
     creator: "@Mehdi_shri",
     title: "Mehdi Sahari — Développeur Fullstack Freelance",
     description: "Automatisation n8n, création de SaaS et sites web qui convertissent.",
-    images: ["/og-image.svg"],
+    images: [{ url: "/og-image.svg", alt: "Mehdi Sahari — Développeur Fullstack Freelance" }],
   },
 };
 
@@ -49,6 +53,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr" className={`${inter.variable} ${spaceMono.variable} ${syne.variable}`}>
       <head>
+        <meta name="theme-color" content="#2563eb" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

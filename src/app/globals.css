@@ -4,10 +4,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  /* Fonts */
-  --font-heading: "Syne", sans-serif;
-  --font-mono: "Space Mono", monospace;
-  --font-body: "Inter", sans-serif;
+  /* Fonts — via variables Next.js font (self-hosted, pas de Google Fonts en prod) */
+  --font-heading: var(--font-syne), "Syne", sans-serif;
+  --font-mono: var(--font-space-mono), "Space Mono", monospace;
+  --font-body: var(--font-inter), "Inter", sans-serif;
 
   /* Colors mapped from CSS vars */
   --color-background: var(--background);
@@ -65,11 +65,11 @@
   * { @apply border-border; }
   body {
     @apply text-foreground;
-    font-family: "Inter", sans-serif;
+    font-family: var(--font-inter), "Inter", sans-serif;
     background: linear-gradient(160deg, hsl(214 60% 97%) 0%, hsl(0 0% 100%) 40%, hsl(221 50% 97%) 100%);
     min-height: 100vh;
   }
-  h1, h2, h3, h4 { font-family: "Syne", sans-serif; }
+  h1, h2, h3, h4 { font-family: var(--font-syne), "Syne", sans-serif; }
   ::selection { background: hsl(221 83% 53% / 0.25); color: hsl(221 30% 12%); }
 }
 
