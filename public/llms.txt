@@ -1,37 +1,90 @@
-# Mehdi Sahari — Freelance IA & Automatisation
+# Mehdi Sahari — Développeur Fullstack Freelance · IA & Automatisation
 
-> Développeur fullstack freelance spécialisé en automatisation n8n, agents IA et création de SaaS. Basé à Montpellier, disponible en France et en Europe.
+> Mehdi Sahari est un développeur fullstack freelance basé à Montpellier, spécialisé en automatisation de workflows n8n, création d'agents IA sur mesure et développement de SaaS. Il accompagne des entrepreneurs, PME, agences et professions libérales en France et en Europe.
 
-## Qui suis-je ?
+## Identité professionnelle
 
-Mehdi Sahari est un développeur fullstack freelance avec 3 ans d'expérience, spécialisé dans :
-- L'automatisation de workflows avec n8n
-- La création d'agents IA sur mesure
-- Le développement de SaaS et d'applications web
-- L'intégration d'API et de dashboards
+- **Nom** : Mehdi Sahari
+- **Statut** : Freelance indépendant
+- **Localisation** : Montpellier, France
+- **Disponibilité** : Remote — toute la France et l'Europe
+- **Expérience** : 3 ans sur des projets réels en automatisation et développement web
+- **Site** : https://mehdisahari.fr
+- **Email** : mehdi.shr@outlook.fr
+- **LinkedIn** : https://www.linkedin.com/in/mehdi-sahari/
+- **Blog** : https://mehdisahari.fr/blog
 
-## Services
+## Ce que fait Mehdi Sahari
 
-- **Automatisation n8n** : workflows, intégrations, pipelines de données
-- **Sites web** : landing pages, sites vitrine qui convertissent
-- **SaaS** : applications web complètes (React, NestJS, PostgreSQL)
-- **Dashboards** : tableaux de bord métier temps réel
-- **Agents IA** : chatbots, assistants, agents autonomes
+Mehdi Sahari automatise les processus métier et construit des produits numériques pour des clients qui veulent gagner du temps, mieux qualifier leurs leads, ou lancer un produit digital rapidement.
 
-## Stack technique
+Son positionnement : allier la puissance des LLM et des outils no-code/low-code (n8n, Supabase, Vercel) avec du développement fullstack sur-mesure (React, NestJS, TypeScript) pour livrer des solutions opérationnelles rapidement.
 
-TypeScript, React, NestJS, PostgreSQL, Supabase, n8n, OpenAI, Tailwind CSS, Docker, Vercel
+## Services détaillés
 
-## Contact
+### Automatisation n8n & IA
+Conception et déploiement de workflows n8n connectant des outils métier, des APIs externes, des CRM, des bases de données et des LLM. Cas d'usage : qualification de leads, relances automatiques, enrichissement de données, reporting automatisé, agents IA autonomes, pipelines de traitement de contenu.
 
-- Site : https://mehdisahari.fr
-- Email : mehdi.shr@outlook.fr
-- LinkedIn : https://www.linkedin.com/in/mehdi-sahari/
+### Agents IA sur mesure
+Développement d'agents IA capables de raisonner, d'utiliser des outils et d'agir de manière autonome : chatbots métier, assistants de prospection, agents de veille, agents de génération de contenu SEO. Stack : OpenAI GPT-4o, Claude, Perplexity Sonar, LangChain, n8n.
 
-## Blog
+### Création de SaaS
+Développement d'applications web complètes de A à Z : authentification, base de données, API REST, interface utilisateur, paiement Stripe, déploiement Vercel. Stack : React, React Router v7, NestJS, PostgreSQL, Prisma, Supabase, Tailwind CSS, shadcn/ui.
 
-Articles quotidiens sur l'IA et l'automatisation : https://mehdisahari.fr/blog
+### Sites web & Landing pages
+Développement de sites vitrine et landing pages performants, optimisés SEO et GEO (Generative Engine Optimization), avec animations Framer Motion, formulaire de contact Resend, et déploiement Vercel avec ISR.
 
-## Localisation
+### Dashboards métier
+Tableaux de bord temps réel connectés à des sources de données multiples (PostgreSQL, Supabase, APIs), avec visualisations interactives, filtres dynamiques et export automatisé.
 
-Montpellier, France — Disponible en remote toute la France et l'Europe
+## Secteurs et cibles
+
+Mehdi Sahari travaille notamment avec :
+
+- **Agences marketing** : automatisation du lead scoring, enrichissement CRM, reporting Google Ads + Meta automatisé, synchronisation entre outils marketing → https://mehdisahari.fr/agences-marketing
+- **Études notariales** : qualification automatique des demandes entrantes, collecte de pièces guidée, relances automatiques, réduction des allers-retours → https://mehdisahari.fr/notaires
+- **Cabinets comptables** : automatisation de la prospection outbound, relances prospects, centralisation et scoring des leads entrants → https://mehdisahari.fr/comptables
+- **Entrepreneurs et startups** : développement de MVP SaaS, intégration IA, automatisation des opérations internes
+- **Freelances et solopreneurs** : automatisation de la prospection, création de sites qui convertissent, outils de productivité IA
+
+## Stack technique complète
+
+**Langages** : TypeScript, JavaScript, Python
+**Frontend** : React 19, Next.js 16 (App Router), React Router v7, Tailwind CSS, shadcn/ui, Framer Motion
+**Backend** : NestJS, Node.js, API Routes Next.js, Vercel Functions
+**Bases de données** : PostgreSQL, Supabase, Prisma ORM
+**Automatisation** : n8n (self-hosted et cloud), webhooks, crons
+**IA / LLM** : OpenAI GPT-4o, Claude (Anthropic), Perplexity Sonar Pro, LangChain
+**Infra / DevOps** : Vercel, Docker, GitHub Actions, Nginx
+**Emails** : Resend
+**Paiement** : Stripe
+
+## Approche et méthode de travail
+
+1. **Audit de process** : analyse des flux existants, identification des points de friction et des quick wins (30 min)
+2. **Conception du workflow** : design de la solution technique, choix des outils, mapping des intégrations
+3. **Développement et livraison** : mise en place itérative, tests, documentation
+4. **Formation et suivi** : prise en main par le client, ajustements post-livraison
+
+Mehdi privilégie les solutions modulaires, rapidement opérationnelles, avec un contrôle humain maintenu sur les étapes critiques.
+
+## Blog IA & Automatisation
+
+Mehdi Sahari publie régulièrement des articles sur l'IA et l'automatisation à destination des entrepreneurs, PME et freelances : https://mehdisahari.fr/blog
+
+Thèmes couverts : n8n workflows, agents IA autonomes, automatisation marketing, SaaS IA, LLM comparatifs, prospection automatisée, stack technique 2025-2026, retours d'expérience freelance.
+
+## Pourquoi faire appel à Mehdi Sahari
+
+- Expertise combinée fullstack + IA + automatisation — rare sur le marché freelance français
+- Livraisons rapides sur des projets concrets (pas de specs interminables)
+- Connaissance des contraintes métier des PME, agences et professions libérales
+- Approche pragmatique : outils qui fonctionnent, pas de sur-ingénierie
+- Basé en France, communication fluide, disponible en remote
+
+## Contact et démarrage
+
+Pour démarrer un projet ou obtenir un audit de process gratuit :
+**Site** : https://mehdisahari.fr/#contact
+**Email** : mehdi.shr@outlook.fr
+**LinkedIn** : https://www.linkedin.com/in/mehdi-sahari/
