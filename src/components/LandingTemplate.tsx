@@ -1,11 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { LucideIcon, ChevronDown, ChevronUp } from "lucide-react";
+import * as LucideIcons from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useState } from "react";
+
+function Icon({ name, size = 20, className }: { name: string; size?: number; className?: string }) {
+  const Comp = (LucideIcons as Record<string, LucideIcons.LucideIcon>)[name];
+  if (!Comp) return null;
+  return <Comp size={size} className={className} />;
+}
 
 export interface LandingContent {
   hero: {
@@ -14,8 +21,8 @@ export interface LandingContent {
     subtitle: string;
     cta: string;
   };
-  pains: { icon: LucideIcon; title: string; desc: string }[];
-  results: { icon: LucideIcon; title: string; desc: string }[];
+  pains: { icon: string; title: string; desc: string }[];
+  results: { icon: string; title: string; desc: string }[];
   usecases: { title: string; desc: string; tag: string }[];
   process: { step: string; title: string; desc: string }[];
   faq: { q: string; a: string }[];
@@ -100,7 +107,7 @@ export default function LandingTemplate({ content }: { content: LandingContent }
             {pains.map((p, i) => (
               <motion.div key={i} {...fade(i * 0.08)} className="flex gap-4 bg-white border border-slate-100 rounded-2xl p-6">
                 <div className="shrink-0 w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center">
-                  <p.icon size={20} className="text-red-500" />
+                  <Icon name={p.icon} size={20} className="text-red-500" />
                 </div>
                 <div>
                   <p className="font-heading font-bold text-slate-900 mb-1">{p.title}</p>
@@ -127,7 +134,7 @@ export default function LandingTemplate({ content }: { content: LandingContent }
             {results.map((r, i) => (
               <motion.div key={i} {...fade(i * 0.08)} className="flex flex-col gap-3 border border-slate-100 rounded-2xl p-6 hover:border-primary/30 hover:shadow-md transition-all">
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <r.icon size={20} className="text-primary" />
+                  <Icon name={r.icon} size={20} className="text-primary" />
                 </div>
                 <p className="font-heading font-bold text-slate-900">{r.title}</p>
                 <p className="text-slate-500 text-sm leading-relaxed">{r.desc}</p>
