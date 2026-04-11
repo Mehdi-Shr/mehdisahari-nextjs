@@ -35,8 +35,8 @@ const steps: {
     Icon: PackageCheck,
     titleFr: "Livraison & support",
     titleEn: "Delivery & support",
-    descFr: "Mise en production, documentation, formation si nécessaire.",
-    descEn: "Production deployment, documentation, onboarding if needed.",
+    descFr: "Mise en production, documentation, formation si nécessaire. Livraison + 30 jours de support inclus.",
+    descEn: "Production deployment, documentation, onboarding if needed. Delivery + 30 days of support included.",
   },
 ];
 

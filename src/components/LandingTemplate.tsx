@@ -83,8 +83,8 @@ export default function LandingTemplate({ content }: { content: LandingContent }
               {hero.cta}
             </Link>
           </motion.div>
-          <motion.p {...fade(0.4)} className="text-blue-200/50 text-xs mt-6 font-mono">
-            Audit de process offert — réponse sous 24h
+          <motion.p {...fade(0.4)} className="text-blue-200/60 text-xs mt-6 font-mono">
+            Audit de process offert · Livraison + 30 jours de support inclus
           </motion.p>
         </div>
       </section>
@@ -213,8 +213,11 @@ export default function LandingTemplate({ content }: { content: LandingContent }
           <motion.h2 {...fade(0)} className="font-heading font-bold text-3xl md:text-4xl text-white mb-4">
             Prêt à automatiser votre {metier} ?
           </motion.h2>
-          <motion.p {...fade(0.1)} className="text-blue-100/80 text-lg mb-8">
+          <motion.p {...fade(0.1)} className="text-blue-100/80 text-lg mb-6">
             Audit de vos process offert — je vous montre ce qu'on peut automatiser en 30 minutes.
+          </motion.p>
+          <motion.p {...fade(0.15)} className="text-blue-200/60 text-sm font-mono mb-8">
+            Livraison + 30 jours de support inclus
           </motion.p>
           <motion.div {...fade(0.2)}>
             <Link href="/#contact" className="inline-flex items-center gap-2 bg-white text-primary font-body font-semibold px-10 py-4 rounded-xl hover:bg-blue-50 transition-all text-base shadow-lg">
