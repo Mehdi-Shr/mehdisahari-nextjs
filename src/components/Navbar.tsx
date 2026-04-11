@@ -69,7 +69,7 @@ const Navbar = () => {
               <li key={l.href}>
                 <button
                   onClick={() => scrollTo(l.href)}
-                  className={`font-body text-sm font-semibold transition-colors hover:text-primary whitespace-nowrap ${scrolled ? "text-slate-700" : "text-white/90"}`}
+                  className={`font-body text-sm font-semibold transition-colors hover:text-primary whitespace-nowrap cursor-pointer ${scrolled ? "text-slate-700" : "text-white/90"}`}
                 >
                   {l.label}
                 </button>
@@ -86,7 +86,7 @@ const Navbar = () => {
             <LanguageToggle />
             <button
               onClick={() => scrollTo("#contact")}
-              className={`font-body text-sm font-semibold px-4 py-2 rounded transition-all whitespace-nowrap ${scrolled ? "bg-primary text-white hover:bg-primary/90" : "bg-white text-primary hover:bg-white/90"}`}
+              className={`font-body text-sm font-semibold px-4 py-2 rounded transition-all whitespace-nowrap cursor-pointer ${scrolled ? "bg-primary text-white hover:bg-primary/90" : "bg-white text-primary hover:bg-white/90"}`}
             >
               {t("Démarrer un projet", "Start a project")}
             </button>

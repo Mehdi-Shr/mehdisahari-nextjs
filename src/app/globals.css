@@ -59,6 +59,8 @@
   --radius: 0.5rem;
   --surface: hsl(221 83% 53% / 0.04);
   --surface-border: hsl(221 83% 53% / 0.14);
+  --neon-glow: 0 0 20px hsl(221 83% 53% / 0.25), 0 0 60px hsl(221 83% 53% / 0.08);
+  --neon-glow-strong: 0 0 20px hsl(221 83% 53% / 0.45), 0 0 60px hsl(221 83% 53% / 0.18);
 }
 
 @layer base {
@@ -69,6 +71,7 @@
     background: linear-gradient(160deg, hsl(214 60% 97%) 0%, hsl(0 0% 100%) 40%, hsl(221 50% 97%) 100%);
     min-height: 100vh;
   }
+  button, [role="button"] { cursor: pointer; }
   h1, h2, h3, h4 { font-family: var(--font-syne), "Syne", sans-serif; }
   ::selection { background: hsl(221 83% 53% / 0.25); color: hsl(221 30% 12%); }
 }
