@@ -68,7 +68,7 @@ export default function LandingTemplate({ content }: { content: LandingContent }
         <div className="absolute inset-0 pointer-events-none opacity-20" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
         <div className="container mx-auto max-w-4xl text-center relative z-10">
           <motion.div {...fade(0)}>
-            <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-blue-200 text-sm font-mono px-4 py-1.5 rounded-full mb-6">
+            <span className="inline-flex items-center gap-2 bg-white/20 border border-white/40 text-white text-sm font-mono font-semibold px-4 py-1.5 rounded-full mb-6 tracking-wide">
               {hero.badge}
             </span>
           </motion.div>
