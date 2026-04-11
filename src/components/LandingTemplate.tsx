@@ -64,7 +64,7 @@ export default function LandingTemplate({ content }: { content: LandingContent }
       <Navbar />
 
       {/* HERO */}
-      <section className="pt-32 pb-24 px-4 relative overflow-hidden" style={{ background: "linear-gradient(160deg, #0f172a 0%, #1e3a5f 60%, #1d4ed8 100%)" }}>
+      <section className="min-h-screen flex items-center px-4 relative overflow-hidden" style={{ background: "linear-gradient(160deg, #0f172a 0%, #1e3a5f 60%, #1d4ed8 100%)" }}>
         <div className="absolute inset-0 pointer-events-none opacity-20" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
         <div className="container mx-auto max-w-4xl text-center relative z-10">
           <motion.div {...fade(0)}>
