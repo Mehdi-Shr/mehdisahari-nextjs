@@ -82,9 +82,6 @@ export default function LandingTemplate({ content }: { content: LandingContent }
             <Link href="/#contact" className="inline-flex items-center justify-center gap-2 bg-white text-primary font-body font-semibold px-8 py-4 rounded-xl hover:bg-blue-50 transition-all text-base shadow-lg">
               {hero.cta}
             </Link>
-            <Link href="/#contact" className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white font-body font-semibold px-8 py-4 rounded-xl hover:bg-white/20 transition-all text-base">
-              Voir une démo →
-            </Link>
           </motion.div>
           <motion.p {...fade(0.4)} className="text-blue-200/50 text-xs mt-6 font-mono">
             Audit de process offert — réponse sous 24h

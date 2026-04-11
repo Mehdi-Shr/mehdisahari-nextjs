@@ -35,7 +35,7 @@ const content: LandingContent = {
     { icon: "RefreshCw", title: "Plus de temps pour le conseil", desc: "Déléguer l'opérationnel commercial aux workflows vous libère de la bande passante pour vous concentrer sur ce que vous faites de mieux : conseiller vos clients." },
   ],
   usecases: [
-    { tag: "Cas #1", title: "Prospection outbound automatisée", desc: "Un workflow identifie chaque semaine de nouveaux prospects (Sirène, LinkedIn, annuaires), les enrichit et déclenche une prise de contact personnalisée." },
+    { tag: "Cas #1", title: "Prospection outbound automatisée", desc: "Un workflow identifie chaque semaine de nouveaux prospects (Sirène, annuaires professionnels, bases de données), les enrichit et déclenche une prise de contact personnalisée." },
     { tag: "Cas #2", title: "Séquence de relances multicanal", desc: "Prospect silencieux depuis 2 semaines ? Le workflow déclenche une relance email à J+14, puis un rappel à J+21, avec le bon message selon son profil." },
     { tag: "Cas #3", title: "Centralisation et scoring des leads entrants", desc: "Chaque demande entrante (site, recommandation, réseau) est automatiquement centralisée, qualifiée et priorisée dans votre outil de suivi." },
   ],

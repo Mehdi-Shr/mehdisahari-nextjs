@@ -28,14 +28,14 @@ const content: LandingContent = {
   ],
   results: [
     { icon: "Target", title: "Lead scoring automatique", desc: "Chaque lead est scoré automatiquement selon ses actions, sa source et son profil. Votre équipe commerciale reçoit uniquement les leads chauds." },
-    { icon: "Zap", title: "Enrichissement et routing instantané", desc: "Les leads sont enrichis (secteur, taille, LinkedIn) et routés vers le bon commercial en temps réel, dès qu'ils entrent dans votre funnel." },
+    { icon: "Zap", title: "Enrichissement et routing instantané", desc: "Les leads sont enrichis (secteur, taille, entreprise) et routés vers le bon commercial en temps réel, dès qu'ils entrent dans votre funnel." },
     { icon: "TrendingUp", title: "Reporting automatisé", desc: "Vos dashboards se mettent à jour automatiquement. Ads, CRM, analytics — tout est consolidé et livré chaque semaine sans intervention manuelle." },
     { icon: "RefreshCw", title: "CRM toujours propre et synchronisé", desc: "Les doublons sont détectés et fusionnés. Les données sont normalisées à l'entrée. Votre CRM reflète fidèlement l'état réel de votre pipeline." },
     { icon: "Clock", title: "Relances nurturing automatisées", desc: "Séquences d'emails personnalisées déclenchées selon le comportement du lead — visite, téléchargement, inactivité — sans action manuelle." },
     { icon: "Users", title: "Plus de temps pour la stratégie", desc: "L'opérationnel répétitif est délégué aux workflows. Vos équipes se concentrent sur la créa, la strat et la relation client." },
   ],
   usecases: [
-    { tag: "Cas #1", title: "Pipeline lead-to-CRM automatisé", desc: "Chaque lead entrant (form, ads, LinkedIn) est enrichi, scoré et créé dans le CRM avec les bonnes propriétés — sans ressaisie manuelle." },
+    { tag: "Cas #1", title: "Pipeline lead-to-CRM automatisé", desc: "Chaque lead entrant (formulaire, ads, email) est enrichi, scoré et créé dans le CRM avec les bonnes propriétés — sans ressaisie manuelle." },
     { tag: "Cas #2", title: "Reporting hebdomadaire automatique", desc: "Chaque lundi matin, un rapport consolidé (Google Ads, Meta, CRM, GA4) est envoyé automatiquement à toute l'équipe via Slack ou email." },
     { tag: "Cas #3", title: "Nurturing comportemental", desc: "Un lead visite votre page prix 3 fois sans convertir ? Un workflow déclenche automatiquement une relance personnalisée 24h après." },
   ],

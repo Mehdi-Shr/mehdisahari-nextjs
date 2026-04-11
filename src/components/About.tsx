@@ -26,16 +26,6 @@ const About = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <a
-              href="https://www.linkedin.com/in/mehdi-sahari/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="flex items-center gap-2 bg-primary/8 hover:bg-primary text-primary hover:text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
-            >
-              <ExternalLink size={15} />
-              LinkedIn
-            </a>
           </motion.div>
 
           {/* Right - Text */}
