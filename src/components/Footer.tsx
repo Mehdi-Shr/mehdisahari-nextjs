@@ -29,7 +29,12 @@ const Footer = () => {
               </button>
             ))}
           </div>
-          <div className="flex gap-4 md:justify-end"></div>
+          <div className="flex gap-4 md:justify-end">
+            <a href="https://www.linkedin.com/in/mehdi-sahari/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+              <ExternalLink size={16} />
+              LinkedIn
+            </a>
+          </div>
         </div>
         <div className="border-t border-primary/10 pt-6 text-center text-xs text-muted-foreground">
           <span>© 2026 Mehdi Sahari</span>

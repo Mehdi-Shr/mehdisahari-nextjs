@@ -74,7 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 addressLocality: "Montpellier",
                 addressCountry: "FR",
               },
-              sameAs: [],
+              sameAs: ["https://www.linkedin.com/in/mehdi-sahari/"],
               knowsAbout: ["n8n", "React", "Next.js", "NestJS", "SaaS", "Automatisation", "TypeScript", "PostgreSQL"],
             }),
           }}
