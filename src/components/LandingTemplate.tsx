@@ -217,7 +217,7 @@ export default function LandingTemplate({ content }: { content: LandingContent }
         <div className="container mx-auto max-w-3xl text-center">
           <motion.div {...fade(0)} className="flex justify-center mb-6">
             <div className="relative">
-              <img src="/photo.jpeg" alt="Mehdi Sahari" className="w-20 h-20 rounded-2xl object-cover border-2 border-white/20 shadow-xl" />
+              <img src="/photo.jpeg" alt="Mehdi Sahari" className="w-20 h-20 rounded-full object-cover border-2 border-white/20 shadow-xl" />
               <span className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-400 rounded-full border-2 border-[#0f172a]" />
             </div>
           </motion.div>
