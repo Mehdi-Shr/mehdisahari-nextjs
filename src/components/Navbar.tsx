@@ -50,7 +50,16 @@ const Navbar = () => {
         }`}
       >
         <nav className="container mx-auto py-4 px-4 lg:px-8 flex items-center justify-between lg:grid lg:grid-cols-3">
-          <Link href="/" className={`font-heading font-bold overflow-hidden transition-colors ${scrolled ? "text-primary" : "text-white"}`}>
+          <button
+            onClick={() => {
+              if (pathname === "/") {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              } else {
+                router.push("/");
+              }
+            }}
+            className={`font-heading font-bold overflow-hidden transition-colors cursor-pointer ${scrolled ? "text-primary" : "text-white"}`}
+          >
             <AnimatePresence mode="wait">
               {scrolled ? (
                 <motion.span key="full" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.25 }} className="block text-xl">
@@ -62,7 +71,7 @@ const Navbar = () => {
                 </motion.span>
               )}
             </AnimatePresence>
-          </Link>
+          </button>
 
           <ul className="hidden lg:flex items-center justify-center gap-6 xl:gap-8">
             {links.map((l) => (
