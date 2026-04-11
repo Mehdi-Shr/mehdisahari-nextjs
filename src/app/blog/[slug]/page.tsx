@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BlogPostContent from "@/components/BlogPostContent";
 
-export const revalidate = 3600; // ISR: régénère toutes les heures
+export const revalidate = false; // Statique jusqu'à invalidation par webhook Supabase
 
 interface Post {
   id: string;
@@ -55,7 +55,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = await getPost(slug);
   if (!post) return {};
-  const image = post.cover_url ?? "https://mehdisahari.fr/og-image.svg";
+  const image = post.cover_url ?? "https://mehdisahari.fr/og-image.png";
   return {
     title: `${post.seo_title ?? post.title} — Mehdi Sahari`,
     description: post.meta_description ?? post.excerpt,
@@ -126,14 +126,25 @@ export default async function BlogPostPage({
     "@type": "BlogPosting",
     headline: post.title,
     description: post.meta_description ?? post.excerpt,
-    image: post.cover_url ?? "https://mehdisahari.fr/og-image.svg",
+    image: post.cover_url ?? "https://mehdisahari.fr/og-image.png",
     datePublished: post.created_at,
     dateModified: post.created_at,
     url: `https://mehdisahari.fr/blog/${post.slug}`,
     keywords: post.keywords?.join(", "),
     author: { "@type": "Person", name: "Mehdi Sahari", url: "https://mehdisahari.fr" },
-    publisher: { "@type": "Person", name: "Mehdi Sahari", url: "https://mehdisahari.fr" },
+    publisher: { "@type": "Organization", name: "Mehdi Sahari", url: "https://mehdisahari.fr", logo: { "@type": "ImageObject", url: "https://mehdisahari.fr/photo.jpeg" } },
     mainEntityOfPage: { "@type": "WebPage", "@id": `https://mehdisahari.fr/blog/${post.slug}` },
+  };
+
+  // Schema.org BreadcrumbList
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://mehdisahari.fr" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://mehdisahari.fr/blog" },
+      { "@type": "ListItem", position: 3, name: post.title, item: `https://mehdisahari.fr/blog/${post.slug}` },
+    ],
   };
 
   // Schema.org FAQPage (si section FAQ détectée)
@@ -157,6 +168,10 @@ export default async function BlogPostPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       {faqSchema && (
         <script

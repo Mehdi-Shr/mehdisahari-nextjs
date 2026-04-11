@@ -96,8 +96,26 @@ export default function BlogPostContent({ post, html }: { post: Post; html: stri
           dangerouslySetInnerHTML={{ __html: html }}
         />
 
+        {/* Liens internes */}
+        <div className="mt-16 border border-slate-200 rounded-2xl p-8">
+          <h3 className="font-heading font-bold text-lg text-slate-900 mb-4">Découvrez mes services par secteur</h3>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/notaires" className="text-sm font-medium text-primary hover:underline underline-offset-2">
+              Automatisation pour notaires →
+            </Link>
+            <span className="text-slate-300">|</span>
+            <Link href="/comptables" className="text-sm font-medium text-primary hover:underline underline-offset-2">
+              Automatisation pour comptables →
+            </Link>
+            <span className="text-slate-300">|</span>
+            <Link href="/agences-marketing" className="text-sm font-medium text-primary hover:underline underline-offset-2">
+              Automatisation pour agences marketing →
+            </Link>
+          </div>
+        </div>
+
         {/* CTA */}
-        <div className="mt-20 rounded-2xl p-10 text-center" style={{ background: "linear-gradient(160deg, #0f172a 0%, #1e3a5f 60%, #1d4ed8 100%)" }}>
+        <div className="mt-8 rounded-2xl p-10 text-center" style={{ background: "linear-gradient(160deg, #0f172a 0%, #1e3a5f 60%, #1d4ed8 100%)" }}>
           <h3 className="font-heading font-bold text-2xl text-white mb-3">Un projet d'automatisation ou d'IA ?</h3>
           <p className="text-blue-100/80 mb-6 max-w-md mx-auto">Discutons de comment l'IA peut transformer votre workflow.</p>
           <Link href="/#contact" className="inline-block bg-white text-primary font-semibold px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors">

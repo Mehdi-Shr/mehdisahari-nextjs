@@ -89,7 +89,7 @@ const Hero = () => {
       <div className="absolute inset-0 scanline-overlay pointer-events-none opacity-30" />
       {/* Floating particles */}
       <div className="absolute inset-0 pointer-events-none">
-        {Array.from({ length: 30 }).map((_, i) => (
+        {Array.from({ length: 10 }).map((_, i) => (
           <div
             key={i}
             className="absolute w-1 h-1 rounded-full bg-primary/30 animate-float"
@@ -120,10 +120,10 @@ const Hero = () => {
           variants={fadeUp}
           className="font-heading font-extrabold text-[2rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.15] mb-6 md:mb-8 text-white"
         >
-          {t("J'automatise. J'intègre l'IA.", "I automate. I integrate AI.")}
+          {t("Automatisation n8n & IA", "n8n Automation & AI")}
           <br />
           <span className="text-blue-300" style={{ textShadow: '0 0 40px hsl(213 94% 68% / 0.5)' }}>
-            {t("Je construis vos produits.", "I build your products.")}
+            {t("à Montpellier", "in Montpellier")}
           </span>
         </motion.h1>
 

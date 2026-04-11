@@ -10,6 +10,7 @@ export async function POST(request: Request) {
 
   revalidatePath("/blog", "page");
   revalidatePath("/blog/[slug]", "page");
+  revalidatePath("/sitemap.xml");
 
   return NextResponse.json({ revalidated: true, at: new Date().toISOString() });
 }
