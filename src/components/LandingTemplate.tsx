@@ -215,7 +215,13 @@ export default function LandingTemplate({ content }: { content: LandingContent }
       {/* CTA FINAL */}
       <section className="py-24 px-4" style={{ background: "linear-gradient(160deg, #0f172a 0%, #1e3a5f 60%, #1d4ed8 100%)" }}>
         <div className="container mx-auto max-w-3xl text-center">
-          <motion.h2 {...fade(0)} className="font-heading font-bold text-3xl md:text-4xl text-white mb-4">
+          <motion.div {...fade(0)} className="flex justify-center mb-6">
+            <div className="relative">
+              <img src="/photo.jpeg" alt="Mehdi Sahari" className="w-20 h-20 rounded-2xl object-cover border-2 border-white/20 shadow-xl" />
+              <span className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-400 rounded-full border-2 border-[#0f172a]" />
+            </div>
+          </motion.div>
+          <motion.h2 {...fade(0.05)} className="font-heading font-bold text-3xl md:text-4xl text-white mb-4">
             Prêt à automatiser votre {metier} ?
           </motion.h2>
           <motion.p {...fade(0.1)} className="text-blue-100/80 text-lg mb-6">
