@@ -55,6 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="fr" className={`${inter.variable} ${spaceMono.variable} ${syne.variable}`}>
       <head>
         <meta name="theme-color" content="#2563eb" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
         <script
           type="application/ld+json"
