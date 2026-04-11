@@ -29,7 +29,7 @@ export default function BlogList({ initialPosts }: { initialPosts: Post[] }) {
             </span>
             <h1 className="font-heading font-bold text-4xl md:text-5xl text-white mb-4">Blog IA & Automatisation</h1>
             <p className="text-blue-100/80 text-lg max-w-xl mx-auto">
-              Un article par jour sur l'IA, n8n, les agents et l'automatisation — par Mehdi Sahari, freelance à Montpellier.
+              Un article par jour sur l'IA, n8n, les agents et l'automatisation — par Mehdi Sahari, consultant en automatisation à Montpellier.
             </p>
           </motion.div>
         </div>

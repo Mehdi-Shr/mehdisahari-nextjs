@@ -11,7 +11,7 @@ const syne = Syne({ weight: ["700", "800"], subsets: ["latin"], variable: "--fon
 export const metadata: Metadata = {
   title: "Mehdi Sahari — Freelance IA & Automatisation | Montpellier",
   description:
-    "Développeur fullstack freelance spécialisé en automatisation n8n, agents IA et création de SaaS. 3 ans d'expérience. Basé à Montpellier, disponible en France et en Europe.",
+    "Consultant en automatisation · IA, workflows n8n et création de SaaS sur mesure. 3 ans d'expérience. Basé à Montpellier, disponible en France et en Europe.",
   metadataBase: new URL("https://mehdisahari.fr"),
   authors: [{ name: "Mehdi Sahari" }],
   robots: { index: true, follow: true },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Mehdi Sahari",
-    title: "Mehdi Sahari — Développeur Fullstack Freelance",
+    title: "Mehdi Sahari — Consultant en Automatisation",
     description:
       "Automatisation n8n, création de SaaS et sites web qui convertissent. Basé à Montpellier, disponible partout en France et en Europe.",
     url: "https://mehdisahari.fr",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
         url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "Mehdi Sahari — Développeur Fullstack Freelance",
+        alt: "Mehdi Sahari — Consultant en Automatisation",
       },
     ],
   },
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@Mehdi_shri",
     creator: "@Mehdi_shri",
-    title: "Mehdi Sahari — Développeur Fullstack Freelance",
+    title: "Mehdi Sahari — Consultant en Automatisation",
     description: "Automatisation n8n, création de SaaS et sites web qui convertissent.",
-    images: [{ url: "/og-image.svg", alt: "Mehdi Sahari — Développeur Fullstack Freelance" }],
+    images: [{ url: "/og-image.svg", alt: "Mehdi Sahari — Consultant en Automatisation" }],
   },
 };
 
@@ -63,12 +63,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Mehdi Sahari",
-              jobTitle: "Développeur Fullstack Freelance",
+              jobTitle: "Consultant en Automatisation",
               url: "https://mehdisahari.fr",
               email: "mehdi.shr@outlook.fr",
               image: "https://mehdisahari.fr/photo.jpeg",
               description:
-                "Développeur fullstack freelance spécialisé en automatisation n8n, création de SaaS et sites web. 3 ans d'expérience sur des projets réels.",
+                "Consultant en automatisation spécialisé en workflows n8n, agents IA et création de SaaS sur mesure. 3 ans d'expérience sur des projets réels.",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Montpellier",

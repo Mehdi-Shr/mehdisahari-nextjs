@@ -112,7 +112,7 @@ const Hero = () => {
         <motion.div variants={fadeUp} className="mb-6 md:mb-8">
           <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-blue-200 text-[10px] sm:text-xs font-semibold uppercase tracking-widest px-3 py-1.5 sm:px-4 rounded-full border border-white/15">
             <span className="w-1.5 h-1.5 rounded-full bg-blue-300 shrink-0" />
-            {t("Développeur Fullstack · Freelance", "Fullstack Developer · Freelance")}
+            {t("Consultant en Automatisation · Freelance", "Automation Consultant · Freelance")}
           </span>
         </motion.div>
 

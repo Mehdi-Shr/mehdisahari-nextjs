@@ -14,7 +14,7 @@ const Footer = () => {
           <div>
             <span className="font-heading text-xl font-bold neon-text">MS</span>
             <p className="text-muted-foreground text-sm mt-2">
-              {t("Développeur freelance · Montpellier", "Freelance developer · Montpellier, France")}
+              {t("Consultant en automatisation · Montpellier", "Automation Consultant · Montpellier, France")}
             </p>
           </div>
           <div className="flex flex-wrap gap-4 md:justify-center">

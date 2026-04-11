@@ -52,8 +52,8 @@ const About = () => {
             </span>
             <h2 className="font-heading font-bold text-2xl md:text-3xl mb-6">
               {t(
-                "Développeur fullstack avec une obsession pour l'efficacité.",
-                "Fullstack developer with an obsession for efficiency."
+                "Consultant en automatisation avec une obsession pour l'efficacité.",
+                "Automation consultant with an obsession for efficiency."
               )}
             </h2>
             <p className="text-muted-foreground leading-relaxed">

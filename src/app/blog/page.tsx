@@ -9,7 +9,7 @@ export const revalidate = 3600; // ISR: régénère toutes les heures
 export const metadata: Metadata = {
   title: "Blog IA & Automatisation — Mehdi Sahari",
   description:
-    "Articles quotidiens sur l'IA et l'automatisation : n8n, agents IA, SaaS, no-code. Par Mehdi Sahari, freelance Montpellier.",
+    "Articles quotidiens sur l'IA et l'automatisation : n8n, agents IA, SaaS, no-code. Par Mehdi Sahari, consultant en automatisation à Montpellier.",
   alternates: { canonical: "https://mehdisahari.fr/blog" },
   openGraph: {
     title: "Blog IA & Automatisation — Mehdi Sahari",
