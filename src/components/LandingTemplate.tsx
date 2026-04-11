@@ -221,7 +221,10 @@ export default function LandingTemplate({ content }: { content: LandingContent }
           <motion.p {...fade(0.1)} className="text-blue-100/80 text-lg mb-6">
             Audit de vos process offert — je vous montre ce qu'on peut automatiser en 30 minutes.
           </motion.p>
-          <motion.div {...fade(0.15)} className="flex justify-center mb-8">
+          <motion.div {...fade(0.15)} className="flex flex-wrap justify-center gap-3 mb-8">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 border border-white/30 text-white text-sm font-semibold px-4 py-2 rounded-full">
+              ✓ Audit offert
+            </span>
             <span className="inline-flex items-center gap-1.5 bg-white/15 border border-white/30 text-white text-sm font-semibold px-4 py-2 rounded-full">
               ✓ Livraison + 30 jours de support inclus
             </span>
