@@ -83,9 +83,14 @@ export default function LandingTemplate({ content }: { content: LandingContent }
               {hero.cta}
             </Link>
           </motion.div>
-          <motion.p {...fade(0.4)} className="text-blue-200/60 text-xs mt-6 font-mono">
-            Audit de process offert · Livraison + 30 jours de support inclus
-          </motion.p>
+          <motion.div {...fade(0.4)} className="flex flex-wrap justify-center gap-3 mt-6">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 border border-white/30 text-white text-xs font-semibold px-3 py-1.5 rounded-full">
+              ✓ Audit offert
+            </span>
+            <span className="inline-flex items-center gap-1.5 bg-white/15 border border-white/30 text-white text-xs font-semibold px-3 py-1.5 rounded-full">
+              ✓ Livraison + 30 jours de support inclus
+            </span>
+          </motion.div>
         </div>
       </section>
 
@@ -216,9 +221,11 @@ export default function LandingTemplate({ content }: { content: LandingContent }
           <motion.p {...fade(0.1)} className="text-blue-100/80 text-lg mb-6">
             Audit de vos process offert — je vous montre ce qu'on peut automatiser en 30 minutes.
           </motion.p>
-          <motion.p {...fade(0.15)} className="text-blue-200/60 text-sm font-mono mb-8">
-            Livraison + 30 jours de support inclus
-          </motion.p>
+          <motion.div {...fade(0.15)} className="flex justify-center mb-8">
+            <span className="inline-flex items-center gap-1.5 bg-white/15 border border-white/30 text-white text-sm font-semibold px-4 py-2 rounded-full">
+              ✓ Livraison + 30 jours de support inclus
+            </span>
+          </motion.div>
           <motion.div {...fade(0.2)}>
             <Link href="/#contact" className="inline-flex items-center gap-2 bg-white text-primary font-body font-semibold px-10 py-4 rounded-xl hover:bg-blue-50 transition-all text-base shadow-lg">
               {hero.cta}
