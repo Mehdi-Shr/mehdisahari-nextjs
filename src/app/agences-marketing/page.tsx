@@ -52,6 +52,33 @@ const content: LandingContent = {
   ],
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: content.faq.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Automatisation pour agences marketing",
+  provider: { "@type": "Person", name: "Mehdi Sahari", url: "https://mehdisahari.fr" },
+  description: "Workflows n8n + IA pour automatiser le lead scoring, l'enrichissement, la synchronisation CRM et le reporting marketing des agences.",
+  areaServed: { "@type": "Country", name: "France" },
+  serviceType: "Automatisation & Intégration IA",
+  url: "https://mehdisahari.fr/agences-marketing",
+};
+
 export default function AgencesMarketingPage() {
-  return <LandingTemplate content={content} />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <LandingTemplate content={content} />
+    </>
+  );
 }

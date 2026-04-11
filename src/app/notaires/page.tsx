@@ -52,6 +52,33 @@ const content: LandingContent = {
   ],
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: content.faq.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Automatisation pour études notariales",
+  provider: { "@type": "Person", name: "Mehdi Sahari", url: "https://mehdisahari.fr" },
+  description: "Workflows n8n + IA pour qualifier les demandes entrantes, organiser les pièces, automatiser les relances et fluidifier le parcours client des études notariales.",
+  areaServed: { "@type": "Country", name: "France" },
+  serviceType: "Automatisation & Intégration IA",
+  url: "https://mehdisahari.fr/notaires",
+};
+
 export default function NotairesPage() {
-  return <LandingTemplate content={content} />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <LandingTemplate content={content} />
+    </>
+  );
 }

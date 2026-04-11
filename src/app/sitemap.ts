@@ -9,6 +9,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   if (!url || !key) return [
     { url: "https://mehdisahari.fr/", lastModified: new Date(), changeFrequency: "monthly", priority: 1.0 },
     { url: "https://mehdisahari.fr/blog", lastModified: new Date(), changeFrequency: "daily", priority: 0.8 },
+    { url: "https://mehdisahari.fr/notaires", lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: "https://mehdisahari.fr/agences-marketing", lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: "https://mehdisahari.fr/comptables", lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
   ];
   const supabase = createClient(url, key);
   const { data: posts } = await supabase
@@ -26,6 +29,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     { url: "https://mehdisahari.fr/", lastModified: new Date(), changeFrequency: "monthly", priority: 1.0 },
     { url: "https://mehdisahari.fr/blog", lastModified: new Date(), changeFrequency: "daily", priority: 0.8 },
+    { url: "https://mehdisahari.fr/notaires", lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: "https://mehdisahari.fr/agences-marketing", lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: "https://mehdisahari.fr/comptables", lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     ...postUrls,
   ];
 }
