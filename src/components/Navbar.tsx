@@ -25,6 +25,7 @@ const Navbar = () => {
     { href: "#services", label: "Services" },
     { href: "#stack", label: "Stack" },
     { href: "#about", label: t("À propos", "About") },
+    { href: "#contact", label: "Contact" },
   ];
 
   const scrollTo = (href: string) => {
@@ -75,12 +76,21 @@ const Navbar = () => {
           <ul className="hidden lg:flex items-center justify-center gap-6 xl:gap-8">
             {links.map((l) => (
               <li key={l.href}>
-                <button
-                  onClick={() => scrollTo(l.href)}
-                  className={`font-body text-sm font-semibold transition-colors hover:text-primary whitespace-nowrap cursor-pointer ${scrolled ? "text-slate-700" : "text-white/90"}`}
-                >
-                  {l.label}
-                </button>
+                {l.label === "Contact" ? (
+                  <button
+                    onClick={() => scrollTo(l.href)}
+                    className={`font-body text-sm font-semibold px-3 py-1 rounded-lg transition-all whitespace-nowrap cursor-pointer border ${scrolled ? "border-primary text-primary hover:bg-primary hover:text-white" : "border-white text-white hover:bg-white hover:text-primary"}`}
+                  >
+                    {l.label}
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => scrollTo(l.href)}
+                    className={`font-body text-sm font-semibold transition-colors hover:text-primary whitespace-nowrap cursor-pointer ${scrolled ? "text-slate-700" : "text-white/90"}`}
+                  >
+                    {l.label}
+                  </button>
+                )}
               </li>
             ))}
             <li>
@@ -92,12 +102,6 @@ const Navbar = () => {
 
           <div className="hidden lg:flex items-center justify-end gap-3 xl:gap-4">
             <LanguageToggle />
-            <button
-              onClick={() => scrollTo("#contact")}
-              className={`font-body text-sm font-semibold px-4 py-2 rounded transition-all whitespace-nowrap cursor-pointer border ${scrolled ? "border-primary text-primary hover:bg-primary/10" : "border-white/60 text-white hover:bg-white/10"}`}
-            >
-              Contact
-            </button>
             <button
               onClick={() => scrollTo("#contact")}
               className={`font-body text-sm font-semibold px-4 py-2 rounded transition-all whitespace-nowrap cursor-pointer ${scrolled ? "bg-primary text-white hover:bg-primary/90" : "bg-white text-primary hover:bg-white/90"}`}
