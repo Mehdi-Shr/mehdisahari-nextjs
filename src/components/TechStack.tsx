@@ -46,7 +46,7 @@ const TechStack = () => {
   const { t } = useLang();
 
   return (
-    <section id="stack" className="py-24">
+    <section id="stack" className="py-16">
       <div className="container mx-auto px-4 mb-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

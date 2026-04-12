@@ -8,7 +8,7 @@ const About = () => {
   const { t } = useLang();
 
   return (
-    <section id="about" className="py-24">
+    <section id="about" className="py-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-5 gap-12 max-w-5xl mx-auto items-center">
           {/* Left - Photo + socials */}
