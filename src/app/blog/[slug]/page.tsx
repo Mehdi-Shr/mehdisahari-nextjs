@@ -19,6 +19,7 @@ interface Post {
   content: string;
   cover_url?: string;
   created_at: string;
+  source_guid?: string;
 }
 
 function getSupabase() {

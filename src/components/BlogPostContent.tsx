@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Calendar, ArrowLeft, Clock, User } from "lucide-react";
+import { Calendar, ArrowLeft, Clock, User, ExternalLink } from "lucide-react";
 
 interface Post {
   id: string;
@@ -13,6 +13,7 @@ interface Post {
   content: string;
   cover_url?: string;
   created_at: string;
+  source_guid?: string;
 }
 
 function readingTime(content: string): number {
@@ -64,6 +65,16 @@ export default function BlogPostContent({ post, html }: { post: Post; html: stri
             <span className="flex items-center gap-1.5"><User size={13} />Mehdi Sahari</span>
             <span className="flex items-center gap-1.5"><Calendar size={13} />{formatDate(post.created_at)}</span>
             <span className="flex items-center gap-1.5"><Clock size={13} />{readingTime(post.content)} min de lecture</span>
+            {post.source_guid && (
+              <a
+                href={`https://news.google.com/rss/articles/${post.source_guid}?oc=5`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 hover:text-white transition-colors"
+              >
+                <ExternalLink size={13} />Article source
+              </a>
+            )}
           </div>
         </div>
       </div>
