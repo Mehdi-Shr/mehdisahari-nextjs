@@ -22,7 +22,7 @@ const Urgency = () => {
           </div>
           <p className="text-white text-xl md:text-2xl font-heading font-bold leading-snug">
             {t(
-              "Les PME qui automatisent aujourd'hui prennent de l'avance sur celles qui attendent.",
+              "Les TPE/PME qui automatisent aujourd'hui prennent de l'avance sur celles qui attendent.",
               "SMBs that automate today get ahead of those that wait."
             )}{" "}
             <span className="text-blue-300">
