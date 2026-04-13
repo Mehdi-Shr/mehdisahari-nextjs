@@ -36,10 +36,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Combien coûte un projet ?",
+      name: "Comment se déroule un projet ?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Un workflow simple démarre à partir de 500€. Un projet complet d'automatisation avec plusieurs intégrations se situe entre 2000€ et 8000€. Un SaaS ou une application web complète à partir de 5000€. Chaque projet commence par un audit gratuit.",
+        text: "Chaque projet commence par un audit gratuit pour comprendre vos besoins. Ensuite, je développe par itérations avec des livraisons intermédiaires. La livraison finale inclut 30 jours de support.",
       },
     },
     {

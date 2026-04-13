@@ -27,7 +27,7 @@ const services = [
       "Qualification et assignation des leads sans intervention manuelle",
       "Connexion avec plus de 400 outils (HubSpot, Pipedrive, Slack, Google Sheets...)",
     ],
-    price: "À partir de 500€ par workflow",
+    price: "",
     tags: ["n8n", "APIs", "Webhooks", "CRM"],
   },
   {
@@ -43,7 +43,7 @@ const services = [
       "Génération de contenu (articles, posts LinkedIn, emails) pilotée par IA",
       "Assistants intelligents connectés à vos données métier",
     ],
-    price: "À partir de 1 500€",
+    price: "",
     tags: ["Claude", "OpenAI", "Gemini", "n8n AI"],
   },
   {
@@ -59,7 +59,7 @@ const services = [
       "Dashboard admin complet avec analytics",
       "CI/CD, Docker, déploiement automatisé",
     ],
-    price: "À partir de 5 000€",
+    price: "",
     tags: ["Next.js", "NestJS", "PostgreSQL", "Docker"],
   },
   {
@@ -75,7 +75,7 @@ const services = [
       "Design responsive, animations fluides",
       "Formulaire de contact, intégration CRM, analytics",
     ],
-    price: "À partir de 1 500€",
+    price: "",
     tags: ["Next.js", "React", "Tailwind", "SEO"],
   },
   {
@@ -91,7 +91,7 @@ const services = [
       "Accès sécurisé par rôle (direction, commercial, support)",
       "Export automatique de rapports PDF/Excel",
     ],
-    price: "À partir de 3 000€",
+    price: "",
     tags: ["React", "Prisma", "REST APIs", "GCP"],
   },
 ];
@@ -182,7 +182,7 @@ export default function ServicesPageContent() {
                     </span>
                   ))}
                 </div>
-                <p className="text-sm font-semibold text-slate-500">{s.price}</p>
+                {s.price && <p className="text-sm font-semibold text-slate-500">{s.price}</p>}
               </motion.div>
 
               <motion.div
@@ -235,7 +235,7 @@ export default function ServicesPageContent() {
           <div className="flex flex-col gap-3">
             <FAQItem q="Quels services proposez-vous ?" a="Automatisation de process avec n8n, intégration d'agents IA, création de SaaS et applications web, sites vitrines et landing pages SEO, dashboards et outils métiers sur mesure." />
             <FAQItem q="Comment fonctionne l'automatisation avec n8n ?" a="n8n est un outil open source qui connecte vos logiciels entre eux via des workflows visuels. Chaque workflow est déclenché par un événement (nouveau lead, email reçu, heure précise) et exécute une série d'actions automatiquement : envoi d'emails, mise à jour CRM, génération de rapports, etc." />
-            <FAQItem q="Combien coûte un projet ?" a="Un workflow simple démarre à partir de 500€. Un projet complet d'automatisation avec plusieurs intégrations se situe entre 2000€ et 8000€. Un SaaS ou une application web complète à partir de 5000€. Chaque projet commence par un audit gratuit." />
+            <FAQItem q="Comment se déroule un projet ?" a="Chaque projet commence par un audit gratuit pour comprendre vos besoins. Ensuite, je développe par itérations avec des livraisons intermédiaires. La livraison finale inclut 30 jours de support." />
             <FAQItem q="Quelles technologies utilisez-vous ?" a="n8n pour l'automatisation, Next.js et React pour le frontend, NestJS et Spring Boot pour le backend, PostgreSQL et Supabase pour les bases de données, Claude et OpenAI pour l'IA, Docker et GCP pour l'infrastructure." />
             <FAQItem q="Travaillez-vous à distance ?" a="Oui, je travaille principalement à distance avec des clients partout en France, en Belgique, au Luxembourg et en Suisse. Je me déplace à Montpellier et ses alentours si nécessaire." />
             <FAQItem q="Que comprend le support après livraison ?" a="Chaque projet inclut 30 jours de support : corrections, ajustements, questions. Au-delà, on peut mettre en place un suivi mensuel adapté à vos besoins." />

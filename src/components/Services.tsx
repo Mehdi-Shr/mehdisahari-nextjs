@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { useLang } from "@/contexts/LanguageContext";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
 import { Workflow, Globe, Rocket, LayoutDashboard, BrainCircuit } from "lucide-react";
@@ -123,6 +124,15 @@ const Services = () => {
               </div>
             </motion.article>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 font-body text-sm font-semibold text-primary border border-primary/20 px-6 py-3 rounded-xl hover:bg-primary hover:text-white transition-all"
+          >
+            {t("Voir tous les services en détail →", "See all services in detail →")}
+          </Link>
         </div>
       </div>
     </section>
