@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLang } from "@/contexts/LanguageContext";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
@@ -43,6 +44,9 @@ const steps: {
 const Process = () => {
   const { t } = useLang();
   const isDesktop = useIsDesktop();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const animate = mounted && isDesktop;
 
   return (
     <section className="py-16">
@@ -67,9 +71,9 @@ const Process = () => {
           {steps.map((step, i) => (
             <motion.div
               key={step.num}
-              initial={isDesktop ? { opacity: 0 } : false}
-              whileInView={isDesktop ? { opacity: 1 } : undefined}
-              viewport={isDesktop ? { once: true } : undefined}
+              initial={animate ? { opacity: 0 } : false}
+              whileInView={animate ? { opacity: 1 } : undefined}
+              viewport={animate ? { once: true } : undefined}
               transition={{ duration: 0.8, delay: i * 0.18, ease: "easeOut" }}
               className="relative bg-white rounded-2xl p-8 border border-primary/10 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300"
             >

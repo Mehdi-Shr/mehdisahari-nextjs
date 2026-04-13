@@ -38,7 +38,7 @@ export default function BlogPostContent({ post, html }: { post: Post; html: stri
       >
         {post.cover_url && (
           <div className="absolute inset-0 z-0">
-            <img src={post.cover_url} alt="" className="w-full h-full object-cover opacity-20" />
+            <img src={post.cover_url} alt={post.title} className="w-full h-full object-cover opacity-20" loading="lazy" />
           </div>
         )}
         <div className="container mx-auto max-w-3xl lg:max-w-4xl relative z-10">
@@ -107,7 +107,7 @@ export default function BlogPostContent({ post, html }: { post: Post; html: stri
           dangerouslySetInnerHTML={{ __html: html }}
         />
 
-        {/* Liens internes */}
+        {/* Liens internes — secteurs */}
         <div className="mt-16 border border-slate-200 rounded-2xl p-8">
           <h3 className="font-heading font-bold text-lg text-slate-900 mb-4">Découvrez mes services par secteur</h3>
           <div className="flex flex-wrap gap-3">
@@ -122,6 +122,29 @@ export default function BlogPostContent({ post, html }: { post: Post; html: stri
             <Link href="/agences-marketing" className="text-sm font-medium text-primary hover:underline underline-offset-2">
               Automatisation pour agences marketing →
             </Link>
+          </div>
+        </div>
+
+        {/* Liens internes — villes */}
+        <div className="mt-4 border border-slate-200 rounded-2xl p-8">
+          <h3 className="font-heading font-bold text-lg text-slate-900 mb-4">Automatisation & IA par ville</h3>
+          <div className="flex flex-wrap gap-x-4 gap-y-2">
+            {[
+              { city: "Montpellier", slug: "automatisation-montpellier" },
+              { city: "Paris", slug: "automatisation-paris" },
+              { city: "Lyon", slug: "automatisation-lyon" },
+              { city: "Marseille", slug: "automatisation-marseille" },
+              { city: "Toulouse", slug: "automatisation-toulouse" },
+              { city: "Bordeaux", slug: "automatisation-bordeaux" },
+              { city: "Lille", slug: "automatisation-lille" },
+              { city: "Bruxelles", slug: "automatisation-bruxelles" },
+              { city: "Luxembourg", slug: "automatisation-luxembourg" },
+              { city: "Genève", slug: "automatisation-geneve" },
+            ].map((c) => (
+              <Link key={c.slug} href={`/${c.slug}`} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                {c.city}
+              </Link>
+            ))}
           </div>
         </div>
 

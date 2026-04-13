@@ -25,7 +25,7 @@ const terminalItems = {
   ],
 };
 
-const Hero = () => {
+const Hero = ({ city }: { city?: string } = {}) => {
   const { lang, t } = useLang();
   const [termIdx, setTermIdx] = useState(0);
   const [charIdx, setCharIdx] = useState(0);
@@ -89,15 +89,26 @@ const Hero = () => {
       <div className="absolute inset-0 scanline-overlay pointer-events-none opacity-30" />
       {/* Floating particles */}
       <div className="absolute inset-0 pointer-events-none">
-        {Array.from({ length: 10 }).map((_, i) => (
+        {[
+          { l: 12, t: 18, d: 0.3, dur: 5.2 },
+          { l: 85, t: 42, d: 1.8, dur: 6.1 },
+          { l: 34, t: 72, d: 3.2, dur: 4.8 },
+          { l: 67, t: 15, d: 0.9, dur: 7.3 },
+          { l: 91, t: 88, d: 4.5, dur: 5.6 },
+          { l: 23, t: 55, d: 2.1, dur: 6.8 },
+          { l: 56, t: 35, d: 5.0, dur: 4.4 },
+          { l: 78, t: 92, d: 1.4, dur: 7.1 },
+          { l: 45, t: 8, d: 3.7, dur: 5.9 },
+          { l: 8, t: 65, d: 2.8, dur: 6.5 },
+        ].map((p, i) => (
           <div
             key={i}
             className="absolute w-1 h-1 rounded-full bg-primary/30 animate-float"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 6}s`,
-              animationDuration: `${4 + Math.random() * 4}s`,
+              left: `${p.l}%`,
+              top: `${p.t}%`,
+              animationDelay: `${p.d}s`,
+              animationDuration: `${p.dur}s`,
             }}
           />
         ))}
@@ -123,7 +134,7 @@ const Hero = () => {
           {t("Automatisation n8n & IA", "n8n Automation & AI")}
           <br />
           <span className="text-blue-300" style={{ textShadow: '0 0 40px hsl(213 94% 68% / 0.5)' }}>
-            {t("à Montpellier", "in Montpellier")}
+            {city ? t(`à ${city}`, `in ${city}`) : t("à Montpellier", "in Montpellier")}
           </span>
         </motion.h1>
 

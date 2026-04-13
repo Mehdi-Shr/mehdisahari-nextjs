@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLang } from "@/contexts/LanguageContext";
 import { useIsDesktop } from "@/hooks/useIsDesktop";
@@ -65,6 +66,9 @@ const services: {
 const Services = () => {
   const { t } = useLang();
   const isDesktop = useIsDesktop();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const animate = mounted && isDesktop;
 
   return (
     <section id="services" className="py-16 relative">
@@ -89,9 +93,9 @@ const Services = () => {
           {services.map((s, i) => (
             <motion.article
               key={i}
-              initial={isDesktop ? { opacity: 0 } : false}
-              whileInView={isDesktop ? { opacity: 1 } : undefined}
-              viewport={isDesktop ? { once: true } : undefined}
+              initial={animate ? { opacity: 0 } : false}
+              whileInView={animate ? { opacity: 1 } : undefined}
+              viewport={animate ? { once: true } : undefined}
               transition={{ duration: 0.8, delay: i * 0.15, ease: "easeOut" }}
               className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
             >

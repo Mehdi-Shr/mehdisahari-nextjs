@@ -6,6 +6,7 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WorkflowSection from "@/components/WorkflowSection";
 import { useState } from "react";
 
 function Icon({ name, size = 20, className }: { name: string; size?: number; className?: string }) {
@@ -27,6 +28,7 @@ export interface LandingContent {
   process: { step: string; title: string; desc: string }[];
   faq: { q: string; a: string }[];
   metier: string;
+  location?: string;
 }
 
 const fade = (delay = 0) => ({
@@ -57,7 +59,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 }
 
 export default function LandingTemplate({ content }: { content: LandingContent }) {
-  const { hero, pains, results, usecases, process, faq, metier } = content;
+  const { hero, pains, results, usecases, process, faq, metier, location } = content;
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
@@ -146,6 +148,9 @@ export default function LandingTemplate({ content }: { content: LandingContent }
         </div>
       </section>
 
+      {/* WORKFLOW ANIMATION */}
+      <WorkflowSection />
+
       {/* CAS D'USAGE */}
       <section className="py-20 px-4 bg-slate-50">
         <div className="container mx-auto max-w-5xl">
@@ -217,7 +222,7 @@ export default function LandingTemplate({ content }: { content: LandingContent }
         <div className="container mx-auto max-w-3xl text-center">
           <motion.div {...fade(0)} className="flex justify-center mb-6">
             <div className="relative">
-              <img src="/photo.jpeg" alt="Mehdi Sahari" className="w-32 h-32 rounded-full object-cover border-2 border-white/20 shadow-xl" />
+              <img src="/photo.jpeg" alt="Mehdi Sahari — Consultant en automatisation et IA" className="w-32 h-32 rounded-full object-cover border-2 border-white/20 shadow-xl" />
               <span className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-400 rounded-full border-2 border-[#0f172a]" />
             </div>
           </motion.div>
@@ -243,7 +248,7 @@ export default function LandingTemplate({ content }: { content: LandingContent }
         </div>
       </section>
 
-      <Footer />
+      <Footer location={location} />
     </div>
   );
 }

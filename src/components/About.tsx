@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useLang } from "@/contexts/LanguageContext";
 import { ExternalLink } from "lucide-react";
 
@@ -20,10 +21,13 @@ const About = () => {
             className="md:col-span-2 flex flex-col items-center"
           >
             <div className="w-48 h-48 rounded-full border-2 border-primary/50 shadow-[0_0_30px_hsl(221_83%_53%/_0.2)] overflow-hidden mb-6">
-              <img
+              <Image
                 src="/photo.jpeg"
-                alt="Mehdi Sahari"
+                alt="Mehdi Sahari — Consultant en automatisation et IA à Montpellier"
+                width={192}
+                height={192}
                 className="w-full h-full object-cover"
+                priority
               />
             </div>
             <a
