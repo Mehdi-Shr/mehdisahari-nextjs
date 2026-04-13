@@ -94,6 +94,11 @@ const Navbar = () => {
               </li>
             ))}
             <li>
+              <Link href="/services" className={`font-body text-sm font-semibold transition-colors hover:text-primary ${scrolled ? "text-slate-700" : "text-white/90"}`}>
+                Services
+              </Link>
+            </li>
+            <li>
               <Link href="/blog" className={`font-body text-sm font-semibold transition-colors hover:text-primary ${scrolled ? "text-slate-700" : "text-white/90"}`}>
                 Blog
               </Link>
@@ -146,8 +151,15 @@ const Navbar = () => {
                   </motion.button>
                 ))}
                 <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 + links.length * 0.07, duration: 0.35 }}>
-                  <Link href="/blog" onClick={() => setMobileOpen(false)} className="group flex items-center gap-4 py-4 border-b border-white/8">
+                  <Link href="/services" onClick={() => setMobileOpen(false)} className="group flex items-center gap-4 py-4 border-b border-white/8">
                     <span className="font-mono text-xs text-blue-400/60 w-6">0{links.length + 1}</span>
+                    <span className="font-heading font-bold text-2xl text-white group-hover:text-blue-300 transition-colors">Services</span>
+                    <span className="ml-auto text-white/20 group-hover:text-blue-300 transition-colors">→</span>
+                  </Link>
+                </motion.div>
+                <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 + (links.length + 1) * 0.07, duration: 0.35 }}>
+                  <Link href="/blog" onClick={() => setMobileOpen(false)} className="group flex items-center gap-4 py-4 border-b border-white/8">
+                    <span className="font-mono text-xs text-blue-400/60 w-6">0{links.length + 2}</span>
                     <span className="font-heading font-bold text-2xl text-white group-hover:text-blue-300 transition-colors">Blog</span>
                     <span className="ml-auto text-white/20 group-hover:text-blue-300 transition-colors">→</span>
                   </Link>

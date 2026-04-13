@@ -61,6 +61,9 @@ const Footer = ({ location }: { location?: string }) => {
                 {l.label}
               </button>
             ))}
+            <Link href="/services" className="text-muted-foreground text-sm hover:text-primary transition-colors">
+              {t("Tous les services", "All services")}
+            </Link>
           </div>
           <div className="flex gap-4 md:justify-end">
             <a href="https://www.linkedin.com/in/mehdi-sahari/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
