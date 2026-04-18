@@ -15,11 +15,13 @@ const Dropdown = ({
   value,
   onChange,
   placeholder,
+  error,
 }: {
   options: Option[];
   value: string;
   onChange: (v: string) => void;
   placeholder: string;
+  error?: boolean;
 }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -42,6 +44,8 @@ const Dropdown = ({
         className={`w-full bg-white border rounded-xl px-4 py-3 font-body text-sm text-left flex items-center justify-between transition-all ${
           open
             ? "border-primary ring-2 ring-primary/10"
+            : error
+            ? "border-red-300 ring-2 ring-red-100"
             : "border-slate-200 hover:border-slate-300"
         } ${!selected ? "text-slate-400" : "text-foreground"}`}
       >
@@ -89,16 +93,37 @@ const Contact = () => {
     budget: "",
     message: "",
   });
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error" | "invalid">("idle");
+  const [errors, setErrors] = useState<Record<string, boolean>>({});
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setForm((f) => ({ ...f, [name]: value }));
+    if (errors[name] && value.trim()) {
+      setErrors((prev) => {
+        const next = { ...prev };
+        delete next[name];
+        return next;
+      });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const missing: Record<string, boolean> = {};
+    if (!form.name.trim()) missing.name = true;
+    if (!form.email.trim()) missing.email = true;
+    if (!form.service) missing.service = true;
+    if (!form.budget) missing.budget = true;
+    if (!form.message.trim()) missing.message = true;
+    if (Object.keys(missing).length > 0) {
+      setErrors(missing);
+      setStatus("invalid");
+      return;
+    }
+    setErrors({});
     setStatus("loading");
     try {
       const res = await fetch("/api/contact", {
@@ -168,8 +193,7 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder={t("Votre nom", "Your name")}
-              required
-              className={inputClass}
+              className={inputClass + (errors.name ? " border-red-300 ring-2 ring-red-100" : "")}
             />
             <input
               name="email"
@@ -177,8 +201,7 @@ const Contact = () => {
               value={form.email}
               onChange={handleChange}
               placeholder={t("Votre email", "Your email")}
-              required
-              className={inputClass}
+              className={inputClass + (errors.email ? " border-red-300 ring-2 ring-red-100" : "")}
             />
           </div>
           <input
@@ -192,14 +215,22 @@ const Contact = () => {
             <Dropdown
               options={serviceOptions}
               value={form.service}
-              onChange={(v) => setForm((f) => ({ ...f, service: v }))}
+              onChange={(v) => {
+                setForm((f) => ({ ...f, service: v }));
+                if (errors.service) setErrors((p) => { const n = { ...p }; delete n.service; return n; });
+              }}
               placeholder={t("Type de projet", "Project type")}
+              error={errors.service}
             />
             <Dropdown
               options={budgetOptions}
               value={form.budget}
-              onChange={(v) => setForm((f) => ({ ...f, budget: v }))}
+              onChange={(v) => {
+                setForm((f) => ({ ...f, budget: v }));
+                if (errors.budget) setErrors((p) => { const n = { ...p }; delete n.budget; return n; });
+              }}
               placeholder={t("Budget estimé", "Estimated budget")}
+              error={errors.budget}
             />
           </div>
           <textarea
@@ -207,9 +238,8 @@ const Contact = () => {
             value={form.message}
             onChange={handleChange}
             placeholder={t("Décrivez votre projet...", "Describe your project...")}
-            required
             rows={5}
-            className={inputClass + " resize-none"}
+            className={inputClass + " resize-none" + (errors.message ? " border-red-300 ring-2 ring-red-100" : "")}
           />
           <button
             type="submit"
@@ -231,6 +261,17 @@ const Contact = () => {
               >
                 <CheckCircle2 size={16} />
                 {t("Message envoyé ! Je vous réponds sous 24h.", "Message sent! I'll get back to you within 24h.")}
+              </motion.div>
+            )}
+            {status === "invalid" && (
+              <motion.div
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                className="flex items-center gap-2 text-sm text-amber-700 bg-amber-50 border border-amber-100 rounded-xl px-4 py-3"
+              >
+                <AlertCircle size={16} />
+                {t("Merci de remplir tous les champs requis.", "Please fill in all required fields.")}
               </motion.div>
             )}
             {status === "error" && (
