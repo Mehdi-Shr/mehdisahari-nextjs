@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Calendar, ArrowLeft, Clock, User, ExternalLink } from "lucide-react";
 
@@ -21,6 +22,7 @@ function readingTime(content: string): number {
 }
 
 export default function BlogPostContent({ post, html }: { post: Post; html: string }) {
+  const [coverErrored, setCoverErrored] = useState(false);
   const formatDate = (iso: string) =>
     new Date(iso).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
 
@@ -36,9 +38,15 @@ export default function BlogPostContent({ post, html }: { post: Post; html: stri
         className="w-full pt-32 pb-16 px-4 mb-14 relative overflow-hidden"
         style={{ background: "linear-gradient(160deg, #0f172a 0%, #1e3a5f 60%, #1d4ed8 100%)" }}
       >
-        {post.cover_url && (
+        {post.cover_url && !coverErrored && (
           <div className="absolute inset-0 z-0">
-            <img src={post.cover_url} alt={post.title} className="w-full h-full object-cover opacity-20" loading="lazy" />
+            <img
+              src={post.cover_url}
+              alt={post.title}
+              className="w-full h-full object-cover opacity-20"
+              loading="lazy"
+              onError={() => setCoverErrored(true)}
+            />
           </div>
         )}
         <div className="container mx-auto max-w-3xl lg:max-w-4xl relative z-10">

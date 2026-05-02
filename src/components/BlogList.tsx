@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Calendar, ArrowRight, BookOpen } from "lucide-react";
 
@@ -13,6 +14,24 @@ interface Post {
   created_at: string;
 }
 
+const BLOG_GRADIENT = "linear-gradient(160deg, #0f172a 0%, #1e3a5f 60%, #1d4ed8 100%)";
+
+function CardCover({ src, alt }: { src?: string; alt: string }) {
+  const [errored, setErrored] = useState(false);
+  if (!src || errored) {
+    return <div className="w-full h-full" style={{ background: BLOG_GRADIENT }} />;
+  }
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+      loading="lazy"
+      onError={() => setErrored(true)}
+    />
+  );
+}
+
 export default function BlogList({ initialPosts }: { initialPosts: Post[] }) {
   const formatDate = (iso: string) =>
     new Date(iso).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
@@ -20,7 +39,7 @@ export default function BlogList({ initialPosts }: { initialPosts: Post[] }) {
   return (
     <>
       {/* Hero */}
-      <section className="pt-32 pb-20 px-4" style={{ background: "linear-gradient(160deg, #0f172a 0%, #1e3a5f 60%, #1d4ed8 100%)" }}>
+      <section className="pt-32 pb-20 px-4" style={{ background: BLOG_GRADIENT }}>
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-blue-200 text-sm font-mono px-4 py-1.5 rounded-full mb-6">
@@ -50,11 +69,7 @@ export default function BlogList({ initialPosts }: { initialPosts: Post[] }) {
                 <motion.article key={post.slug} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.08 }}>
                   <Link href={`/blog/${post.slug}`} className="group flex flex-col h-full border border-slate-100 rounded-2xl overflow-hidden hover:border-blue-200 hover:shadow-lg transition-all duration-300">
                     <div className="w-full h-44 overflow-hidden bg-slate-100 shrink-0">
-                      {post.cover_url ? (
-                        <img src={post.cover_url} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-                      ) : (
-                        <div className="w-full h-full" style={{ background: "linear-gradient(160deg, #0f172a 0%, #1e3a5f 60%, #1d4ed8 100%)" }} />
-                      )}
+                      <CardCover src={post.cover_url} alt={post.title} />
                     </div>
                     <div className="flex flex-col flex-1 p-5">
                       <div className="flex items-center gap-2 text-xs text-slate-400 mb-3">
